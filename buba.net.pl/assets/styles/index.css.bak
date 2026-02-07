@@ -1,0 +1,212 @@
+body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    margin: 0;
+    background: #f4f6fa;
+    color: #222;
+}
+
+/* ================= HEADER ================= */
+
+header {
+    background: #2d3e50;
+    color: #fff;
+    padding: 2rem 0 1rem 0;
+    text-align: center;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2.5rem;
+    letter-spacing: 2px;
+}
+
+header p {
+    margin: 0.5rem 0 0 0;
+    font-size: 1.2rem;
+    font-weight: 300;
+}
+/* header a,
+header a:visited {
+    color: white;
+} */
+
+/* Marquee container – no color or font changes here */
+header marquee {
+    display: inline-block;
+    transition: transform 0.3s ease;
+}
+
+/* Enlarge rainbow text on hover */
+header marquee:hover .animated-rainbow {
+    transform: scale(1.3);
+}
+
+/* ================= RAINBOW TEXT ================= */
+
+.animated-rainbow {
+    font-size: 30px;
+    font-family: Arial Black, Gadget, sans-serif;
+    background: linear-gradient(
+        to left,
+        #f00, #ff2b00, #f50, #ff8000, #fa0, #ffd500, #ff0,
+        #d4ff00, #af0, #80ff00, #5f0, #2bff00, #0f0,
+        #00ff2a, #0f5, #00ff80, #0fa, #00ffd5, #0ff,
+        #00d5ff, #0af, #0080ff, #05f, #002aff, #00f,
+        #2b00ff, #50f, #8000ff, #a0f, #d400ff, #f0f,
+        #ff00d4, #f0a, #ff0080, #f05, #ff002b, #f00
+    );
+    background-size: 500px 100%;
+    animation: rainbow-move-left-right 5s linear infinite alternate;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    display: inline-block;
+    transition: transform 0.3s ease;
+}
+
+@keyframes rainbow-move-left-right {
+    0% {
+        background-position: 0 0;
+    }
+    100% {
+        background-position: -500px 0;
+    }
+}
+
+/* ================= MAIN CONTENT ================= */
+
+.container {
+    max-width: 900px;
+    margin: 2rem auto;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.07);
+    padding: 2rem;
+}
+
+.profile-img {
+    width: 100%;
+    max-width: 400px;
+    border-radius: 8px;
+    display: block;
+    margin: 0 auto 2rem auto;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+
+h2 {
+    color: #2d3e50;
+    margin-top: 0;
+}
+
+.about,
+.future {
+    margin-bottom: 2rem;
+}
+
+
+/* ================= GALLERY ================= */
+
+.gallery img {
+    width: 200px;
+    height: 150px;
+    object-fit: cover;
+    margin: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.gallery img:hover {
+    opacity: 0.8;
+}
+
+/* ================= LIGHTBOX ================= */
+
+#lightbox {
+    position: fixed;
+    display: none;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.8);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+#lightbox img {
+    max-width: 90%;
+    max-height: 90%;
+}
+
+/* ================= FOOTER ================= */
+
+footer {
+    text-align: center;
+    padding: 1rem 0;
+    background: #2d3e50;
+    color: #fff;
+    margin-top: 2rem;
+    font-size: 0.95rem;
+    border-radius: 0 0 8px 8px;
+}
+
+/* ================= MOBILE ================= */
+
+@media (max-width: 600px) {
+    .container {
+        padding: 1rem;
+    }
+
+    .gallery img {
+        width: 100px;
+        height: 70px;
+    }
+
+    .animated-rainbow {
+        font-size: 28px;
+    }
+}
+/* ================= LINK HOVER SCALE ================= */
+
+.scale-link {
+    display: inline-block; /* prevents layout shift */
+    transition: transform 0.3s ease;
+}
+
+.scale-link:hover {
+    transform: scale(1.3);
+}
+/* ================= CREDLY GRID ================= */
+
+.credly-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    justify-items: center;
+    margin-top: 1rem;
+}
+
+/* ================= CREDLY BADGE ================= */
+
+.credly-badge {
+    transition: transform 0.3s ease;
+    position: relative;
+}
+
+.credly-badge:hover {
+    transform: scale(1.3);
+    z-index: 10;
+}
+
+/* ================= WHITE LINK ================= */
+
+header a.white-link {
+    font-weight: bold;
+    color: white;
+    transition: transform 0.3s ease;
+}
+
+header a.white-link:hover {
+    transform: scale(1.3); /* keeps your hover scale effect */
+}
